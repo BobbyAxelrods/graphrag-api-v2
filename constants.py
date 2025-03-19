@@ -1,0 +1,7 @@
+COMMUNITY_TABLE = "communities"
+COMMUNITY_REPORT_TABLE = "community_reports"
+ENTITY_TABLE = "documents"
+ENTITY_EMBEDDING_TABLE = "entities"
+RELATIONSHIP_TABLE = "relationships"
+COVARIATE_TABLE = "covariates"
+TEXT_UNIT_TABLE = "text_units"
