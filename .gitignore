@@ -162,3 +162,10 @@ cython_debug/
 #.idea/
 
 ragtest/
+
+
+#indexbox information 
+/indexbox
+# The following files are created by the indexbox library and should be ignored.
+
+.env

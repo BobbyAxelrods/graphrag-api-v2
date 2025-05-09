@@ -30,7 +30,7 @@ pip install -r requirements.txt
 1. Copy the entire GraphRAG project directory (e.g., `ragtest/`) into the root of this repository. This folder must contain at least: `output`, `prompts`, `settings.yaml` and `.env`.
 2. In `config.py`, point `PROJECT_DIRECTORY` at that folder, and adjust any other options as needed:
    ```python
-   PROJECT_DIRECTORY = "ragtest"     # ← name of the folder you just copied
+   PROJECT_DIRECTORY = "indexbox"     # ← name of the folder you just copied
    COMMUNITY_LEVEL = 2
    CLAIM_EXTRACTION_ENABLED = False
    RESPONSE_TYPE = "Single Paragraph"
