@@ -27,6 +27,28 @@ pip install -r requirements.txt
 
 ## Usage
 
+## Build and Install `graphrag` Locally Using Poetry (Windows)
+Repo: [https://github.com/microsoft/graphrag](https://github.com/microsoft/graphrag)
+
+## Step 1: Install Poetry
+
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python - 
+
+## Step 2: Add Poetry to PATH (if needed)
+
+$env:Path += ";$env:USERPROFILE\AppData\Roaming\Python\Scripts"
+
+poetry --version
+
+## Step 3: Go to the graphrag project directory
+
+cd path\to\graphrag
+
+poetry install
+
+poetry build
+
+## Running the api server
 1. Copy the entire GraphRAG project directory (e.g., `ragtest/`) into the root of this repository. This folder must contain at least: `output`, `prompts`, `settings.yaml` and `.env`. COpy in both indexbox and in api.py directory. 
 2. In `config.py`, point `PROJECT_DIRECTORY` at that folder, and adjust any other options as needed:
    ```python
@@ -52,3 +74,10 @@ You can also use the interface at [GraphRAG Visualizer](https://noworneverev.git
 - `/search/local`: Perform a local search using GraphRAG.
 - `/search/drift`: Perform a DRIFT search using GraphRAG.
 - `/search/basic`: Perform a basic search using text units.
+
+
+
+
+
+pip install dist/graphrag-2.2.1-py3-none-any.whl
+
