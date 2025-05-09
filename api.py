@@ -3,9 +3,13 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import uvicorn
+from dotenv import load_dotenv
+load_dotenv()
+
+from claimify import Claimify
+claimify = Claimify(model="gpt-4o-mini", p=2, f=2)
 
 from utils import process_context_data
-
 from pathlib import Path
 import graphrag.api as api
 from graphrag.config.load_config import load_config
@@ -27,7 +31,7 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://noworneverev.github.io"],
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -69,11 +73,19 @@ async def local_search(query: str = Query(..., description="Local Search")):
                                 response_type=RESPONSE_TYPE,
                                 query=query,
                             )
-        response_dict = {
-            "response": response,
-            "context_data": process_context_data(context),
-        }        
-        return JSONResponse(content=response_dict)
+        payload = await claimify.extract(question=query, answer=response)
+
+        # response_dict = {
+        #     "response": response,
+        #     "context_data": process_context_data(context),
+        # }        
+        # return JSONResponse(content=response_dict)
+        return JSONResponse(content={"response": response, 
+                                     "claimify": payload,
+                                     "context_data": process_context_data(context)}
+                                     )
+    
+    
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
