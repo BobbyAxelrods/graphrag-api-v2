@@ -5,3 +5,5 @@ pandas
 dotenv
 openai
 nltk
+shutil
+python-multipart

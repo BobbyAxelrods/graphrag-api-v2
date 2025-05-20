@@ -1,0 +1,231 @@
+{
+    "info": {
+        "name": "GraphRAG API v2 - Full Test Suite",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Check Settings (.env & settings.yaml)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/check/settings",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "check",
+                        "settings"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "View settings.yaml (Raw)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/settings/view_adjustments",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "settings",
+                        "view_adjustments"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Check Output Folder",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/check/output",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "check",
+                        "output"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Clear Output Folder",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/clear/output",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "clear",
+                        "output"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Upload Files to Output",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "file",
+                            "type": "file",
+                            "src": ""
+                        },
+                        {
+                            "key": "file",
+                            "type": "file",
+                            "src": ""
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "http://localhost:8000/upload/new_file",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "upload",
+                        "new_file"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Search - Global",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/search/global?query=test",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "search",
+                        "global"
+                    ],
+                    "query": [
+                        {
+                            "key": "query",
+                            "value": "test"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Search - Local",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/search/local?query=test",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "search",
+                        "local"
+                    ],
+                    "query": [
+                        {
+                            "key": "query",
+                            "value": "test"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Search - Drift",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/search/drift?query=test",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "search",
+                        "drift"
+                    ],
+                    "query": [
+                        {
+                            "key": "query",
+                            "value": "test"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Search - Basic",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/search/basic?query=test",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "search",
+                        "basic"
+                    ],
+                    "query": [
+                        {
+                            "key": "query",
+                            "value": "test"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Status Check",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/status",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "status"
+                    ]
+                }
+            }
+        }
+    ]
+}

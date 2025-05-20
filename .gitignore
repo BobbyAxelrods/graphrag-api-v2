@@ -169,3 +169,6 @@ ragtest/
 # The following files are created by the indexbox library and should be ignored.
 
 .env
+graphrag-api\indexbox
+
+graphrag-api\graphrag
