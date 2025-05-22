@@ -12,7 +12,6 @@ RUN apt-get update && \
     apt-get clean
 
 # 🧬 Clone specific branch from backend repo (site)
-RUN git clone --branch site --single-branch https://github.com/BobbyAxelrod>
 # 🧬 Clone Microsoft GraphRAG repo
 RUN git clone https://github.com/microsoft/graphrag.git /tmp/graphrag
 
