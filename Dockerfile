@@ -1,4 +1,3 @@
-  GNU nano 6.2                     Dockerfile                               # 📌 Base: slim Python 3.10
 FROM python:3.10-slim
 
 # 📁 Set working directory
