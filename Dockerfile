@@ -12,20 +12,18 @@ RUN apt-get update && \
     apt-get clean
 
 # 🧬 Clone specific branch from backend repo (site)
-# 🧬 Clone Microsoft GraphRAG repo
-RUN git clone https://github.com/microsoft/graphrag.git /tmp/graphrag
+# RUN git clone --branch site --single-branch https://github.com/BobbyAxelr>RUN git clone https://github.com/microsoft/graphrag.git /tmp/graphrag
 
 # ✅ Install GraphRAG as a module
 RUN pip install /tmp/graphrag
 
+COPY . .
+
 # 📦 Install backend dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # ✅ Expose FastAPI port
 EXPOSE 8000
 
 # 🚀 Start FastAPI app
 CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
-
-
-
